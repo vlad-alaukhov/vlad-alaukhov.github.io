@@ -1,298 +1,289 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vlad Alaukhov - FullStack Developer</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кейсы — AI Manufactory</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; background: #f4f6f8; color: #222; }
+
+  header {
+    background: #1a2b4a; color: #fff; text-align: center;
+    padding: 40px 20px; margin-bottom: 30px;
+  }
+  header h1 { font-size: 32px; margin-bottom: 8px; }
+  header p { color: #b8c4d8; }
+
+  .feed { max-width: 900px; margin: 0 auto 40px; padding: 0 20px; }
+
+  /* Один кейс = один пост */
+  .case {
+    background: #fff; border-radius: 12px; margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.08); overflow: hidden;
+  }
+  .case-header { padding: 24px 28px 8px; }
+  .case-header .tag {
+    display: inline-block; background: #e6eefc; color: #1a2b4a;
+    padding: 4px 12px; border-radius: 20px; font-size: 13px; margin-bottom: 10px;
+  }
+  .case-header h2 { color: #1a2b4a; font-size: 24px; margin-bottom: 8px; }
+  .case-header .desc { color: #555; line-height: 1.6; }
+
+  /* Карусель слайдов презентации внутри кейса */
+  .carousel {
+    position: relative;
+    margin: 20px 28px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f0f3f7;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.4s ease;
+    will-change: transform;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px 30px;
+  }
+
+  .slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  .slide h3 { color: #1a2b4a; margin-bottom: 10px; font-size: 18px; }
+  .slide p { line-height: 1.6; color: #444; }
+  .slide .num { font-size: 12px; color: #8a94a6; margin-bottom: 8px; }
+
+  .btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: #1a2b4a; color: #fff; border: none; cursor: pointer;
+    width: 36px; height: 36px; border-radius: 50%; font-size: 18px;
+  }
+  .btn.prev { left: 8px; }
+  .btn.next { right: 8px; }
+
+  .dots { text-align: center; padding: 12px; }
+  .dot {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    background: #c3ccd8; margin: 0 4px; cursor: pointer;
+  }
+  .dot.active { background: #1a2b4a; }
+
+  .case-footer { padding: 0 28px 24px; }
+  .case-footer .result { font-weight: bold; color: #1a7a3d; }
+
+  footer { text-align: center; padding: 30px; color: #888; }
+</style>
 </head>
 <body>
-    <!-- Навигация -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">Vlad Alaukhov</div>
-            <div class="nav-links">
-                <a href="#about">Обо мне</a>
-                <a href="#admin">Web-админка</a>
-                <a href="#pipeline">Пайплайн</a>
-                <a href="#bot">Telegram-бот</a>
-                <a href="#features">Функционал</a>
-                <a href="#contact">Контакты</a>
+
+  <header>
+    <h1>Наши кейсы</h1>
+    <p>Готовые проекты</p>
+  </header>
+
+<div class="feed">
+
+    <!-- ===== КЕЙС 1 ===== -->
+<div class="case">
+    <div class="case-header">
+        <span class="tag">RAG</span>
+        <h2>RAG-система для нормативной документации</h2>
+        <div class="desc"><p><b>Задача:</b> Сотрудники предприятия тратили время на поиск информации в разрозненных документах.</br>
+            Нужен был инструмент, который понимает вопросы на естественном языке и мгновенно даёт точные ответы.</br></p>
+            <p><b>Решение:</b> Разработали RAG-систему на базе GigaChat-2-Max и FAISS.
+            Telegram-бот отвечает на любые вопросы по документам, показывает источник и полный текст статьи.</br>
+            Админ-панель на Django позволяет управлять базой знаний и промптами.</br></p>
+            <p><b>Технологии:</b> Python, FastAPI, Django, LangChain, FAISS, GigaChat, aiogram.</p>
+            <p><b>Результат:</b> Поиск информации — с 30 минут до 5 секунд. Система введена в эксплуатацию.</p>
+        </div>
+      </div>
+
+      <!-- Карусель слайдов презентации -->
+  <div class="carousel" data-carousel>
+    <div class="slides">
+      <!-- Слайд 1 -->
+      <div class="slide">
+        <span class="num">Слайд 1 / 6</span>
+        <p><img src="case_RAG/1.png" alt="Постановка задач"></p>
+      </div>
+
+      <!-- Слайд 2 -->
+      <div class="slide">
+        <span class="num">Слайд 2 / 6</span>
+        <p><img src="case_RAG/2.png" alt="Архитектура"></p>
+      </div>
+
+      <!-- Слайд 3 -->
+      <div class="slide">
+        <span class="num">Слайд 3 / 6</span>
+        <p><img src="case_RAG/3.png" alt="Инструменты и технологии"></p>
+      </div>
+
+      <!-- Слайд 4 -->
+      <div class="slide">
+        <span class="num">Слайд 4 / 6</span>
+        <p><img src="case_RAG/4.png" alt="Внешний вид бота"></p>
+      </div>
+
+      <!-- Слайд 5 -->
+      <div class="slide">
+        <span class="num">Слайд 5 / 6</span>
+        <p><img src="case_RAG/5.png" alt="Внешний вид админ-панели"></p>
+      </div>
+
+      <!-- Слайд 6 -->
+      <div class="slide">
+        <span class="num">Слайд 6 / 6</span>
+        <p><img src="case_RAG/6.png" alt="Результаты"></p>
+      </div>
+    </div>
+    <button class="btn prev">‹</button>
+    <button class="btn next">›</button>
+    <div class="dots"></div>
+  </div>
+</div>
+
+    <!-- ===== КЕЙС 2 ===== -->
+<div class="case">
+    <div class="case-header">
+        <span class="tag">AI-TechSupport</span>
+        <h2>ИИ-техподдержка для колл-центра</h2>
+        <div class="desc">
+          <p><b>Задача:</b> Операторы колл-центра тратили время на прослушивание записей звонков для анализа обращений. Нужна была система, которая автоматически расшифровывает диалоги, структурирует их по ролям (оператор/клиент) и формирует краткую выжимку для последующего внедрения в нейротехподдержку.</p>
+          <p><b>Решение:</b> Разработали двухсервисную систему: Django (веб-интерфейс) и FastAPI (асинхронная обработка). Аудио загружается через трёхпанельный интерфейс, проходит сжатие пауз через ffmpeg, разделяется на каналы, транскрибируется через SaluteSpeech (с резервом на KairosASR), структурируется по репликам с временной привязкой и передаётся в GigaChat для суммаризации. Результат — готовая выжимка: тема, факты, решение.</p>
+          <p><b>Технологии:</b> Python, Django, FastAPI, asyncio, ffmpeg, KairosASR, SaluteSpeech, GigaChat, Bootstrap 5.</p>
+          <p><b>Результат:</b> Анализ 3-минутного звонка — с 10 минут до 5 секунд. Точность транскрибации — 87–90%, разделение по спикерам — 100% (по каналам). Система готова к сборке базы знаний нейротехподдержки.</p>
+        </div>
+    </div>
+
+    <div class="carousel" data-carousel>
+        <div class="slides">
+            <!-- Слайд 1 -->
+            <div class="slide">
+                <span class="num">Слайд 1 / 5</span>
+                <p><img src="case_STT/1.png" alt="Постановка задач"></p>
+            </div>
+
+            <!-- Слайд 2 -->
+            <div class="slide">
+                <span class="num">Слайд 2 / 5</span>
+                <p><img src="case_STT/2.png" alt="Решения"></p>
+            </div>
+
+            <!-- Слайд 3 -->
+            <div class="slide">
+                <span class="num">Слайд 3 / 5</span>
+                <p><img src="case_STT/3.png" alt="Инструменты и технологии"></p>
+            </div>
+
+            <!-- Слайд 4 -->
+            <div class="slide">
+                <span class="num">Слайд 4 / 5</span>
+                <p><img src="case_STT/4.png" alt="Внешний вид админ-панели"></p>
+            </div>
+
+            <!-- Слайд 5 -->
+            <div class="slide">
+                <span class="num">Слайд 5 / 5</span>
+                    <p><img src="case_STT/5.png" alt="Результаты"></p>
             </div>
         </div>
-    </nav>
+        <button class="btn prev">‹</button>
+        <button class="btn next">›</button>
+        <div class="dots"></div>
+    </div>
 
-    <!-- Герой секция -->
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h1>FullStack Developer</h1>
-            <p class="hero-subtitle">Создаю сложные веб-системы с AI-интеграцией</p>
-            <p class="hero-description">Специализируюсь на разработке RAG-систем, админ-панелей и Telegram-ботов для обработки документов</p>
-            <div class="hero-stack">
-                <span class="stack-item">Python</span>
-                <span class="stack-item">Django</span>
-                <span class="stack-item">FastAPI</span>
-                <span class="stack-item">PostgreSQL</span>
-                <span class="stack-item">Docker</span>
+</div>
+
+     <!-- ===== КЕЙС 3 ===== -->
+<div class="case">
+    <div class="case-header">
+        <span class="tag">OpenClaw</span>
+        <h2>ИИ-агент консультант по лунным дням и расположению планет</h2>
+        <div class="desc">
+          <p><b>Задача:</b> Пользователь сверяется с лунными ритмами, но много времени тратит на поиски и вычисления благоприятных дней для бытовых и рабочих дел. Планирование осложняется тем, что приходится держать в памяти число и время для благоприятного периода.</p>
+          <p><b>Решение:</b> Разработали автономного ИИ агента на OpenClaw. Пользователь запрашивает, благоприятно ли сегодня совершить действие. Агент агент запускает Python-скрипт парсера эфемерид NASA, получает начало и конец лунного дня, расположение Луны и планет: Меркурия Венеры, Марса на фоне зодиакальных созвездий, обращается к базе знаний за характеристиками текущего лунного дня и отвечает с описанием. Если отрицательно, то предлагает перенести на благоприятный период и в нужный день присылает напоминание.</p>
+          <p><b>Технологии:</b> Python, skyfield, OpenClaw, LLM deepseek-v4-flash.</p>
+          <p><b>Результат:</b> Пользователь получает точечную информацию по благоприятности задуманного мероприятия и напоминание.</p>
+        </div>
+    </div>
+    <div class="carousel" data-carousel>
+        <div class="slides">
+            <!-- Слайд 1 -->
+            <div class="slide">
+                <span class="num">Слайд 1 / 5</span>
+                <p><img src="case_Lunatik/1.png" alt="Постановка задач"></p>
+            </div>
+
+            <!-- Слайд 2 -->
+            <div class="slide">
+                <span class="num">Слайд 2 / 5</span>
+                <p><img src="case_Lunatik/2.png" alt="Решения"></p>
+            </div>
+
+            <!-- Слайд 3 -->
+            <div class="slide">
+                <span class="num">Слайд 3 / 5</span>
+                <p><img src="case_Lunatik/3.png" alt="Инструменты и технологии"></p>
+            </div>
+
+            <!-- Слайд 4 -->
+            <div class="slide">
+                <span class="num">Слайд 4 / 5</span>
+                <p><img src="case_Lunatik/4.png" alt="Внешний вид админ-панели"></p>
+            </div>
+
+            <!-- Слайд 5 -->
+            <div class="slide">
+                <span class="num">Слайд 5 / 5</span>
+                    <p><img src="case_Lunatik/5.png" alt="Результаты"></p>
             </div>
         </div>
-    </section>
+        <button class="btn prev">‹</button>
+        <button class="btn next">›</button>
+        <div class="dots"></div>
+    </div>
+</div>
+</div>
 
-    <!-- Web-админка -->
-    <section id="admin" class="section admin-section">
-        <div class="container">
-            <h2 class="section-title">Web-админка RAG-системы</h2>
-            <p class="section-subtitle">Трехпанельный интерфейс управления документами и AI-промптами</p>
-            
-            <div class="carousel">
-                <div class="carousel-container">
-                    <div class="carousel-slide active">
-                        <img src="images/Interface1.png" alt="Главный интерфейс админки">
-                        <div class="slide-caption">
-                            <h3>Единый рабочий стол</h3>
-                            <p>Три панели: промпты, редактор, управление файлами</p>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="images/Interface2.png" alt="Управление промптами">
-                        <div class="slide-caption">
-                            <h3>Управление промптами</h3>
-                            <p>Версионность, защита, предпросмотр изменений</p>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="images/Interface3.png" alt="Редактор документов">
-                        <div class="slide-caption">
-                            <h3>Markdown редактор</h3>
-                            <p>Продвинутое редактирование с предпросмотром</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-controls">
-                    <button class="carousel-prev">‹</button>
-                    <div class="carousel-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                    <button class="carousel-next">›</button>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer>© 2026 AI Manufactory</footer>
 
-    <!-- Пайплайн обработки -->
-    <section id="pipeline" class="section pipeline-section">
-        <div class="container">
-            <h2 class="section-title">Пайплайн обработки документов</h2>
-            <p class="section-subtitle">Полный цикл от загрузки до векторного поиска</p>
-            
-            <div class="pipeline-steps">
-                <div class="pipeline-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Загрузка RAW</h3>
-                        <p>DOCX/PDF → DB_RAW</p>
-                    </div>
-                </div>
-                <div class="step-arrow">→</div>
-                
-                <div class="pipeline-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Парсинг в Markdown</h3>
-                        <p>Автоматическая конвертация → DB_MD</p>
-                    </div>
-                </div>
-                <div class="step-arrow">→</div>
-                
-                <div class="pipeline-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Интеллектуальная нарезка</h3>
-                        <p>Семантическое разделение на чанки</p>
-                    </div>
-                </div>
-                <div class="step-arrow">→</div>
-                
-                <div class="pipeline-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Векторизация</h3>
-                        <p>FAISS индексы → DB</p>
-                    </div>
-                </div>
-                <div class="step-arrow">→</div>
-                
-                <div class="pipeline-step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Объединение</h3>
-                        <p>Единый поисковый индекс → DB_FAISS</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <script>
+    // Инициализация всех каруселей на странице
+    document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+      const slides = carousel.querySelector('.slides');
+      const dotsWrap = carousel.querySelector('.dots');
+      const total = carousel.querySelectorAll('.slide').length;
+      let i = 0;
 
-    <!-- Telegram-бот -->
-    <section id="bot" class="section bot-section">
-        <div class="container">
-            <h2 class="section-title">Telegram-бот</h2>
-            <p class="section-subtitle">AI-помощник для консультаций по документам</p>
-            
-            <div class="bot-carousel">
-                <div class="bot-carousel-container">
-                    <div class="bot-slide active">
-                        <img src="images/bot1.png" alt="Старт бота">
-                        <div class="bot-caption">
-                            <h3>Старт и выбор категории</h3>
-                            <p>Пользователь выбирает базу документов</p>
-                        </div>
-                    </div>
-                    <div class="bot-slide">
-                        <img src="images/bot2.png" alt="Поиск и ответ">
-                        <div class="bot-caption">
-                            <h3>Поиск и генерация ответа</h3>
-                            <p>AI анализирует документы и формирует ответ</p>
-                        </div>
-                    </div>
-                    <div class="bot-slide">
-                        <img src="images/bot3.png" alt="Оценка качества">
-                        <div class="bot-caption">
-                            <h3>Система оценки</h3>
-                            <p>Сбор обратной связи для улучшения качества</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bot-controls">
-                    <button class="bot-prev">‹</button>
-                    <div class="bot-dots">
-                        <span class="bot-dot active"></span>
-                        <span class="bot-dot"></span>
-                        <span class="bot-dot"></span>
-                    </div>
-                    <button class="bot-next">›</button>
-                </div>
-            </div>
+      // Точки-индикаторы
+      for (let d = 0; d < total; d++) {
+        const dot = document.createElement('span');
+        dot.className = 'dot' + (d === 0 ? ' active' : '');
+        dot.onclick = function () { go(d); };
+        dotsWrap.appendChild(dot);
+      }
+      const dots = carousel.querySelectorAll('.dot');
 
-            <!-- Схема работы бота -->
-            <div class="bot-workflow">
-                <h3>Схема работы бота</h3>
-                <div class="workflow-steps">
-                    <div class="workflow-step">
-                        <div class="workflow-icon">🚀</div>
-                        <span>Старт /start</span>
-                    </div>
-                    <div class="workflow-arrow">→</div>
-                    <div class="workflow-step">
-                        <div class="workflow-icon">📂</div>
-                        <span>Выбор категории</span>
-                    </div>
-                    <div class="workflow-arrow">→</div>
-                    <div class="workflow-step">
-                        <div class="workflow-icon">🔍</div>
-                        <span>Поиск чанков</span>
-                    </div>
-                    <div class="workflow-arrow">→</div>
-                    <div class="workflow-step">
-                        <div class="workflow-icon">🧩</div>
-                        <span>Сборка статьи</span>
-                    </div>
-                    <div class="workflow-arrow">→</div>
-                    <div class="workflow-step">
-                        <div class="workflow-icon">🤖</div>
-                        <span>Генерация ответа</span>
-                    </div>
-                    <div class="workflow-arrow">→</div>
-                    <div class="workflow-step">
-                        <div class="workflow-icon">⭐</div>
-                        <span>Оценка качества</span>
-                    </div>
-                    <div class="workflow-arrow">→</div>
-                    <div class="workflow-step">
-                        <div class="workflow-icon">📊</div>
-                        <span>Логирование</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      function go(n) {
+        i = (n + total) % total;
+        slides.style.transform = 'translateX(-' + i * 100 + '%)';
+        dots.forEach(function (d, idx) { d.classList.toggle('active', idx === i); });
+      }
 
-    <!-- Функционал админки -->
-    <section id="features" class="section features-section">
-        <div class="container">
-            <h2 class="section-title">Функционал Web-админки</h2>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📁</div>
-                    <h3>Управление документами</h3>
-                    <ul>
-                        <li>Загрузка DOCX/PDF</li>
-                        <li>Пакетный парсинг</li>
-                        <li>Редактирование Markdown</li>
-                        <li>Управление отделами</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">⚙️</div>
-                    <h3>Настройки LLM</h3>
-                    <ul>
-                        <li>Выбор модели GigaChat</li>
-                        <li>Настройка температуры</li>
-                        <li>Модели эмбеддингов</li>
-                        <li>Параметры поиска</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
-                    <h3>Управление промптами</h3>
-                    <ul>
-                        <li>Версионность промптов</li>
-                        <li>Защита от изменений</li>
-                        <li>Авто-бэкапы</li>
-                        <li>Валидация структуры</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Мониторинг и логи</h3>
-                    <ul>
-                        <li>Просмотр логов бота</li>
-                        <li>Статистика запросов</li>
-                        <li>Оценки пользователей</li>
-                        <li>Аудит изменений</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Контакты -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2 class="section-title">Готов к новым проектам</h2>
-            <p class="section-subtitle">Обсудим вашу задачу?</p>
-            
-            <div class="contact-links">
-                <a href="mailto:your.email@example.com" class="contact-link">
-                    📧 Email
-                </a>
-                <a href="https://t.me/your_telegram" class="contact-link">
-                    📱 Telegram
-                </a>
-                <a href="https://github.com/your_github" class="contact-link">
-                    💻 GitHub
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
+      carousel.querySelector('.prev').onclick = function () { go(i - 1); };
+      carousel.querySelector('.next').onclick = function () { go(i + 1); };
+    });
+  </script>
 </body>
 </html>
